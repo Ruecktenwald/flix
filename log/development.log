@@ -529,3 +529,445 @@ Migrating to AddToMovies (20190218011238)
   [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to AddFieldsToMovies (20190218012553)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "movies" ADD "description" text[0m
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "movies" ADD "released_on" date[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190218012553"]]
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mMovie Load (1.5ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ?, "description" = ?, "released_on" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2019-02-18 01:41:05.718371"], ["description", "Tony Stark builds an armored suit to fight the throes of evil"], ["released_on", "2019-01-25"], ["id", 1]]
+  [1m[35m (3.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ?, "description" = ?, "released_on" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2019-02-18 01:43:47.080514"], ["description", "Superman eats kryptonite and dies"], ["released_on", "2019-03-25"], ["id", 2]]
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" WHERE "movies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "movies" SET "updated_at" = ?, "description" = ?, "released_on" = ? WHERE "movies"."id" = ?[0m  [["updated_at", "2019-02-18 01:45:15.948623"], ["description", "Peter Parker swings from building to building again"], ["released_on", "2019-02-25"], ["id", 3]]
+  [1m[35m (2.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:45:35 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 36ms (Views: 30.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:45:40 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 32ms (Views: 27.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:47:21 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.4ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 39ms (Views: 35.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:48:12 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:7: syntax error, unexpected '<'
+...freeze;@output_buffer.append=(<p>movie.description</p><p>mov...
+...                              ^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:7: unknown regexp option - p
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:7: syntax error, unexpected ')'
+...on</p><p>movie.released_on</p>);@output_buffer.safe_append='...
+...                              ^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+'.freeze; 	 end
+          	 ^~~
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:10: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/movies/index.html.erb:7: syntax error, unexpected '<'
+app/views/movies/index.html.erb:7: unknown regexp option - p
+app/views/movies/index.html.erb:7: syntax error, unexpected ')'
+app/views/movies/index.html.erb:8: syntax error, unexpected keyword_end, expecting ')'
+app/views/movies/index.html.erb:10: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/movies/index.html.erb:12: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.1ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (112.7ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:49:08 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 35ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:50:53 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 35ms (Views: 30.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:58:45 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 33ms (Views: 28.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:59:24 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 37ms (Views: 31.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:59:34 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (0.7ms)
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:7: syntax error, unexpected $undefined
+...reeze;@output_buffer.append=( \nmovie.title );@output_buffer...
+...                              ^):
+  
+app/views/movies/index.html.erb:7: syntax error, unexpected $undefined
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (113.6ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 20:59:42 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 32ms (Views: 27.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:04:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:5: unknown regexp options - artcl
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:6: syntax error, unexpected '<'
+ 	<header>
+ 	^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:8: unknown regexp options - hadr
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:10: syntax error, unexpected '<'
+ 		<p>'.freeze;@output_buffer.app...
+ 		^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:14: unknown regexp options - th
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:15: syntax error, unexpected '<'
+ 				<td>'.freeze;@output_buffer.ap...
+ 				^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:16: unknown regexp options - tr
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:17: syntax error, unexpected '<'
+ 			<tr>
+ 			^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:18: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+ 				<th>Rating:</th>
+ 				          ^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:19: syntax error, unexpected '<'
+ 				<td>('.freeze;@output_buffer.a...
+ 				^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:20: unknown regexp options - tr
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:21: syntax error, unexpected '<'
+ 			<tr>
+ 			^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:22: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+ 				<th>Total Gross:</th>
+ 				          ^~~~~~
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:23: unknown regexp options - td
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:25: syntax error, unexpected '<'
+ 			</tr>
+ 			^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:26: unknown regexp options - tabl
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:27: syntax error, unexpected '<'
+ 	</article>
+ 	^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:29: unknown regexp option - l
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:32: unterminated string meets end of file
+          end
+             ^
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+          end
+             ^):
+  
+app/views/movies/index.html.erb:5: unknown regexp options - artcl
+app/views/movies/index.html.erb:6: syntax error, unexpected '<'
+app/views/movies/index.html.erb:8: unknown regexp options - hadr
+app/views/movies/index.html.erb:10: syntax error, unexpected '<'
+app/views/movies/index.html.erb:14: unknown regexp options - th
+app/views/movies/index.html.erb:15: syntax error, unexpected '<'
+app/views/movies/index.html.erb:16: unknown regexp options - tr
+app/views/movies/index.html.erb:17: syntax error, unexpected '<'
+app/views/movies/index.html.erb:18: syntax error, unexpected tSYMBEG, expecting keyword_do or '{' or '('
+app/views/movies/index.html.erb:19: syntax error, unexpected '<'
+app/views/movies/index.html.erb:20: unknown regexp options - tr
+app/views/movies/index.html.erb:21: syntax error, unexpected '<'
+app/views/movies/index.html.erb:22: syntax error, unexpected tLABEL, expecting keyword_do or '{' or '('
+app/views/movies/index.html.erb:23: unknown regexp options - td
+app/views/movies/index.html.erb:25: syntax error, unexpected '<'
+app/views/movies/index.html.erb:26: unknown regexp options - tabl
+app/views/movies/index.html.erb:27: syntax error, unexpected '<'
+app/views/movies/index.html.erb:29: unknown regexp option - l
+app/views/movies/index.html.erb:32: unterminated string meets end of file
+app/views/movies/index.html.erb:32: syntax error, unexpected end-of-input, expecting keyword_end
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.4ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (105.5ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:04:55 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/movies/index.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/movies/index.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.0ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.7ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.0ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (110.2ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:05:38 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  Rendered movies/index.html.erb within layouts/application (1.3ms)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms)
+
+
+  
+SyntaxError (/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+          ensure
+          ^~~~~~
+/Users/peterruecktenwald/rails_studio/flix/app/views/movies/index.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+          end
+          ^~~):
+  
+app/views/movies/index.html.erb:30: syntax error, unexpected keyword_ensure, expecting ')'
+app/views/movies/index.html.erb:32: syntax error, unexpected keyword_end, expecting ')'
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (4.8ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (106.9ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:05:52 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (11.8ms)
+Completed 200 OK in 39ms (Views: 34.9ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:06:18 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(count_column) FROM (SELECT  1 AS count_column FROM "movies" LIMIT ?) subquery_for_count[0m  [["LIMIT", 1]]
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT  "movies".* FROM "movies" LIMIT ?[0m  [["LIMIT", 1]]
+  Rendered movies/index.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 39ms (Views: 30.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:06:30 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (10.2ms)
+Completed 200 OK in 37ms (Views: 31.1ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:07:39 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (5.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `fetch' for " ":String):
+     7:  		<strong><li> <%= movie.title %></strong> 
+     8:  	</header>	
+     9: 
+    10:  		<p><%=truncate(movie.description, ' ')%></p>
+    11:  		
+    12:  		<table>
+    13:  			<tr>
+  
+app/views/movies/index.html.erb:10:in `block in _app_views_movies_index_html_erb___4045801901838045304_70310831639240'
+app/views/movies/index.html.erb:4:in `_app_views_movies_index_html_erb___4045801901838045304_70310831639240'
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.1ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (110.5ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:08:58 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 36ms (Views: 30.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:13:21 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (8.8ms)
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 0.4ms)
+
+
+  
+ActionView::Template::Error (wrong number of arguments (given 1, expected 0)):
+    12:  		<table>
+    13:  			<tr>
+    14:  				<th>Released:</th>
+    15:  				<td><%=movie.released_on (time_ago_in_words(movie.released_on))%></td>
+    16:  			</tr>
+    17:  			<tr>
+    18:  				<th>Rating:</th>
+  
+app/views/movies/index.html.erb:15:in `block in _app_views_movies_index_html_erb___4045801901838045304_70310869615820'
+app/views/movies/index.html.erb:4:in `_app_views_movies_index_html_erb___4045801901838045304_70310869615820'
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.9ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.8ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (104.9ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:14:01 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (12.7ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.3ms)
+
+
+  
+ActionView::Template::Error (undefined method `time' for Fri, 25 Jan 2019:Date
+Did you mean?  ctime):
+    12:  		<table>
+    13:  			<tr>
+    14:  				<th>Released:</th>
+    15:  				<td><%=movie.released_on (time_ago_in_words(movie.released_on.time))%></td>
+    16:  			</tr>
+    17:  			<tr>
+    18:  				<th>Rating:</th>
+  
+app/views/movies/index.html.erb:15:in `block in _app_views_movies_index_html_erb___4045801901838045304_70310832211000'
+app/views/movies/index.html.erb:4:in `_app_views_movies_index_html_erb___4045801901838045304_70310832211000'
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_source.html.erb (3.8ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendering /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
+  Rendered /Users/peterruecktenwald/.rvm/gems/ruby-2.5.1/gems/actionpack-5.0.7.1/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (109.4ms)
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:14:51 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.1ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.5ms)
+Completed 200 OK in 37ms (Views: 30.6ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:15:10 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.2ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 40ms (Views: 36.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:16:30 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 35ms (Views: 29.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/movies" for 127.0.0.1 at 2019-02-17 22:16:59 -0500
+Processing by MoviesController#index as HTML
+  Rendering movies/index.html.erb within layouts/application
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "movies"[0m
+  [1m[36mMovie Load (0.3ms)[0m  [1m[34mSELECT "movies".* FROM "movies"[0m
+  Rendered movies/index.html.erb within layouts/application (4.4ms)
+Completed 200 OK in 34ms (Views: 29.3ms | ActiveRecord: 0.5ms)
+
+
