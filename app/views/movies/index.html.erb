@@ -1,0 +1,9 @@
+<h1><%=pluralize(@movie.size, 'Movie')%></h1>
+
+<ul>
+	<%@movie.each do |movie|%>
+	<li><%= movie %></li>
+
+	<%end%>
+
+</ul>
