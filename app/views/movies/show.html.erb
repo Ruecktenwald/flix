@@ -18,6 +18,8 @@
   </p>
   <h3>Total Gross</h3>
   <p>
-    <%= number_to_currency(@movie.total_gross) %>
+    <%= format_total_gross(@movie) %>
   </p>
 </article>
+
+<%=link_to "All Movies", movies_path%>
