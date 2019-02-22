@@ -1,8 +1,8 @@
 <h1><%=pluralize(@movie.size, 'Movie')%></h1>
 
+	<%= link_to "Add New Movie", new_movie_path %>
 	<article>
 		
-	
 	<%@movie.each do |movie|%>
 		<br>
 	 	<header><%= link_to movie.title, movie %></header>
