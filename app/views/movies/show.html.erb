@@ -28,6 +28,10 @@
     <%= format_total_gross(@movie) %>
   </p>
 
+  <h3>Average Review</h3>
+<p>
+  <%= format_average_stars(@movie) %>
+</p>
   <%= link_to pluralize(@movie.reviews.size, "review"), 
             movie_reviews_path(@movie) %> - 
 
